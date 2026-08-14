@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Gift ❤️</title>
+
+    <style>
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            background-color: #c91f4b;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding-top: 150px;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 45px;
+            letter-spacing: 5px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           PASSWORD
+        ========================= */
+
+        #passwordInput {
+            width: 150px;
+            padding: 15px;
+            font-size: 25px;
+            text-align: center;
+            border: none;
+            border-radius: 15px;
+            outline: none;
+            margin: 20px;
+        }
+
+
+        /* =========================
+           CAT
+        ========================= */
+
+        #screen1 img {
+            width: 220px;
+            display: block;
+            margin: 30px auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        button {
+            background-color: white;
+            color: #c91f4b;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 35px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           SCREENS
+        ========================= */
+
+        #screen1,
+        #screen2 {
+            display: none;
+        }
+
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        #musicButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 18px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+
+        /* =========================
+           BUTTERFLIES
+        ========================= */
+
+        .butterfly {
+            position: fixed;
+            font-size: 35px;
+            animation: fly 4s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .butterfly1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .butterfly2 {
+            top: 60%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .butterfly3 {
+            top: 30%;
+            right: 25%;
+            animation-delay: 2s;
+        }
+
+        @keyframes fly {
+
+            0%, 100% {
+                transform:
+                    translate(0, 0)
+                    rotate(0deg);
+            }
+
+            50% {
+                transform:
+                    translate(30px, -40px)
+                    rotate(15deg);
+            }
+
+        }
+
+
+        /* =========================
+           GIFT
+        ========================= */
+
+        .gift {
+            width: 180px;
+            height: 170px;
+            margin: 50px auto;
+            position: relative;
+            cursor: pointer;
+            animation: giftBounce 2s infinite;
+        }
+
+        .gift-box {
+            width: 180px;
+            height: 130px;
+            background: #ff4f81;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 5px;
+        }
+
+        .gift-lid {
+            width: 200px;
+            height: 35px;
+            background: #ff6b9a;
+            position: absolute;
+            top: 10px;
+            left: -10px;
+            border-radius: 5px;
+            z-index: 2;
+            transition: transform 0.8s ease;
+        }
+
+        .gift-ribbon {
+            width: 30px;
+            height: 170px;
+            background: #ffd166;
+            position: absolute;
+            left: 75px;
+            bottom: 0;
+            z-index: 3;
+        }
+
+        @keyframes giftBounce {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* =========================
+           HEARTS
+        ========================= */
+
+        .hearts {
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .hearts.show {
+            opacity: 1;
+        }
+
+        .hearts span {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0;
+        }
+
+        .hearts span:nth-child(1) {
+            animation:
+                heartFly 2s ease-out infinite;
+        }
+
+        .hearts span:nth-child(2) {
+            animation:
+                heartFly 2s ease-out infinite 0.3s;
+        }
+
+        .hearts span:nth-child(3) {
+            animation:
+                heartFly 2s ease-out infinite 0.6s;
+        }
+
+        .hearts span:nth-child(4) {
+            animation:
+                heartFly 2s ease-out infinite 0.9s;
+        }
+
+        .hearts span:nth-child(5) {
+            animation:
+                heartFly 2s ease-out infinite 1.2s;
+        }
+
+        @keyframes heartFly {
+
+            0% {
+                transform:
+                    translate(0, 0)
+                    scale(0.5);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translate(80px, -180px)
+                    scale(1.2);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 25px;
+            animation:
+                heartFloat 3s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes heartFloat {
+
+            0% {
+                transform:
+                    translate(0, 0)
+                    scale(0.5);
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translate(var(--x), var(--y))
+                    scale(1.4)
+                    rotate(20deg);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           SPARKLES
+        ========================= */
+
+        .sparkle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            animation:
+                sparkleAnimation
+                1.5s ease-out forwards;
+        }
+
+        @keyframes sparkleAnimation {
+
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        #message {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background:
+                rgba(255,255,255,0.08);
+            border:
+                1px solid
+                rgba(255,255,255,0.25);
+            border-radius: 30px;
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.18);
+            animation:
+                messageIn
+                1.5s ease forwards;
+        }
+
+        #message h1 {
+            font-size: 45px;
+            margin-bottom: 35px;
+        }
+
+        #message p {
+            font-size: 25px;
+            line-height: 2;
+        }
+
+        @keyframes messageIn {
+
+            0% {
+                opacity: 0;
+                transform:
+                    translateY(60px)
+                    scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           PHOTO ALBUM
+        ========================= */
+
+        .photo-album {
+            margin-top: 50px;
+        }
+
+        #albumPhoto {
+            width: 300px;
+            height: 380px;
+            object-fit: cover;
+            background: white;
+            padding:
+                12px 12px 45px 12px;
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,0.25);
+            border-radius: 5px;
+            opacity: 1;
+            transform: rotate(-4deg);
+            transition:
+                opacity 0.5s ease,
+                transform 0.5s ease;
+        }
+
+        .photo-album button {
+            display: block;
+            margin: 30px auto;
+        }
+
+
+        /* =========================
+           FINAL STEP
+        ========================= */
+
+        #finalMessage {
+            display: none;
+            margin-top: 50px;
+            animation:
+                finalIn
+                1.5s ease forwards;
+        }
+
+        #finalMessage h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        #finalMessage p {
+            font-size: 22px;
+            line-height: 1.8;
+        }
+
+        @keyframes finalIn {
+
+            0% {
+                opacity: 0;
+                transform:
+                    scale(0.6)
+                    translateY(40px);
+            }
+
+            70% {
+                transform:
+                    scale(1.08);
+            }
+
+            100% {
+                opacity: 1;
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           FINAL BUTTON
+        ========================= */
+
+        #lastButton {
+            margin-top: 20px;
+            font-size: 22px;
+            padding:
+                16px 40px;
+            animation:
+                buttonPulse
+                1.5s infinite;
+        }
+
+        @keyframes buttonPulse {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+        }
+
+
+        /* =========================
+           LAST SURPRISE
+        ========================= */
+
+        #lastSurprise {
+            display: none;
+            margin-top: 50px;
+            animation:
+                surpriseIn
+                2s ease forwards;
+        }
+
+        #lastSurprise h2 {
+            font-size: 42px;
+            margin-bottom: 25px;
+        }
+
+        #lastSurprise p {
+            font-size: 25px;
+            line-height: 2;
+        }
+
+        .bigHeart {
+            font-size: 80px;
+            display: block;
+            animation:
+                bigHeartBeat
+                1.3s infinite;
+        }
+
+        @keyframes bigHeartBeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+
+        }
+
+        @keyframes surpriseIn {
+
+            0% {
+                opacity: 0;
+                transform:
+                    scale(0.5)
+                    translateY(50px);
+            }
+
+            60% {
+                opacity: 1;
+                transform:
+                    scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           FINAL FLOATING HEARTS
+        ========================= */
+
+        .final-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            font-size: 30px;
+            animation:
+                finalHeartFloat
+                4s ease-out forwards;
+        }
+
+        @keyframes finalHeartFloat {
+
+            0% {
+                opacity: 0;
+                transform:
+                    translateY(50px)
+                    scale(0.5);
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform:
+                    translate(
+                        var(--fx),
+                        var(--fy)
+                    )
+                    scale(1.5)
+                    rotate(30deg);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding-top: 100px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            #message {
+                margin: 0 15px;
+                padding: 20px 15px;
+            }
+
+            #message h1 {
+                font-size: 32px;
+            }
+
+            #message p {
+                font-size: 19px;
+                line-height: 1.8;
+            }
+
+            #albumPhoto {
+                width: 250px;
+                height: 320px;
+            }
+
+            #musicButton {
+                top: 10px;
+                right: 10px;
+                font-size: 12px;
+                padding: 8px 14px;
+            }
+
+            #finalMessage h2 {
+                font-size: 28px;
+            }
+
+            #finalMessage p {
+                font-size: 19px;
+            }
+
+            #lastSurprise h2 {
+                font-size: 32px;
+            }
+
+            #lastSurprise p {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <audio id="bgMusic" preload="auto">
+
+        <source
+            src="music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <button id="musicButton">
+        🎵 PLAY MUSIC
+    </button>
+
+
+    <!-- =========================
+         BUTTERFLIES
+    ========================= -->
+
+    <div class="butterfly butterfly1">
+        🦋
+    </div>
+
+    <div class="butterfly butterfly2">
+        🦋
+    </div>
+
+    <div class="butterfly butterfly3">
+        🦋
+    </div>
+
+
+    <!-- =========================
+         PASSWORD
+    ========================= -->
+
+    <div id="passwordScreen">
+
+        <h1>
+            ENTER PASSWORD
+        </h1>
+
+        <input
+            type="password"
+            id="passwordInput"
+            maxlength="4"
+            inputmode="numeric"
+            placeholder="••••">
+
+        <br>
+
+        <button onclick="checkPassword()">
+            ENTER
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         WRONG PASSWORD
+    ========================= -->
+
+    <div id="screen1">
+
+        <h1>
+            WRONG PASSWORD
+        </h1>
+
+        <img
+            src="cat.webp"
+            alt="Cute Cat">
+
+        <button onclick="tryAgain()">
+            TRY AGAIN
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         GIFT
+    ========================= -->
+
+    <div id="screen2">
+
+        <h1>
+            🎉 YOU GOT IT!
+        </h1>
+
+        <p>
+            There is a surprise for you 💝
+        </p>
+
+        <div
+            class="gift"
+            onclick="openGift()">
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-box"></div>
+
+            <div class="gift-ribbon"></div>
+
+        </div>
+
+        <div class="hearts">
+
+            <span>❤️</span>
+            <span>❤️</span>
+            <span>💗</span>
+            <span>💕</span>
+            <span>❤️</span>
+
+        </div>
+
+        <p>
+            Click the gift!
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         MESSAGE
+    ========================= -->
+
+    <div id="message">
+
+        <h1>
+            💌 FOR YOU
+        </h1>
+
+        <p>
+
+            والله ياسوسو انتي مافي زيك في الدنيا دي كلها مهما اوصفلك
+            شعوري و احساسي كيف لمن اكون معاكي ولا تكوني واقفة جمبي
+            و القاكي لمن احتاجك حقيقي احس كدا بأحساس ماينوصف من حلاوته 🥺
+
+            <br><br>
+
+            صح اني غلط و سويتلك شي مرا مو حلو و جرحتك و زعلتك مني
+            مدة طويلة لكن والله لو اقعد سنين قدام ما راح اوفي ليكي
+            حقك ابدًا معايا يااحلى سوسو و احلى زوجة في الدنيا
+
+            <br><br>
+
+            ماابغا اشوف الدنيا دي كلها الا معاكي
+            و عيوني ماتشوفها الا بيكي ❤️❤️🥹🫂
+
+        </p>
+
+
+        <!-- =========================
+             PHOTO ALBUM
+        ========================= -->
+
+        <div class="photo-album">
+
+            <img
+                id="albumPhoto"
+                src="1.png"
+                alt="Photo">
+
+            <button onclick="nextPhoto()">
+                NEXT ❤️
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             FINAL MESSAGE
+        ========================= -->
+
+        <div id="finalMessage">
+
+            <h2>
+                ❤️ لسه عندي شيء أخير لك...
+            </h2>
+
+            <p>
+                إذا وصلتي لهنا...
+                معناته إنك شفتي كل شيء حطيته لك 🥹
+                <br>
+                بس باقي آخر مفاجأة ❤️
+            </p>
+
+            <button
+                id="lastButton"
+                onclick="showLastSurprise()">
+
+                اضغطي هنا ❤️
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             LAST SURPRISE
+        ========================= -->
+
+        <div id="lastSurprise">
+
+            <span class="bigHeart">
+                ❤️
+            </span>
+
+            <h2>
+                أحبك يا سوسو 🥹❤️
+            </h2>
+
+            <p>
+
+                مهما كتبت ومهما قلت،
+                ما راح أقدر أوصف لك قد إيش
+                وجودك يعني لي.
+
+                <br><br>
+
+                أنتِ مو بس شخص أحبه...
+                أنتِ الشخص اللي أبغا أكمل
+                معاه كل أيامي الجاية.
+
+                <br><br>
+
+                وأتمنى مهما صار بيننا،
+                نرجع دائمًا لبعض،
+                ونبقى مع بعض،
+                ونعيش كل الأشياء الحلوة
+                اللي لسه ما عشناها ❤️
+
+                <br><br>
+
+                أحبك اليوم،
+                وبكرة،
+                وكل يوم بعده. 🫂❤️
+
+            </p>
+
+            <div
+                style="
+                font-size:50px;
+                margin-top:30px;
+                ">
+
+                🥹 ❤️ 🫂 ❤️ 🥹
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        const music =
+            document.getElementById("bgMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+        let musicStarted = false;
+
+
+        document.addEventListener(
+            "click",
+            function () {
+
+                if (!musicStarted) {
+
+                    music.play()
+                        .then(function () {
+
+                            musicStarted = true;
+
+                            musicButton.innerHTML =
+                                "⏸️ PAUSE MUSIC";
+
+                        })
+                        .catch(function (error) {
+
+                            console.log(error);
+
+                        });
+
+                }
+
+            },
+            { once: true }
+        );
+
+
+        musicButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                if (music.paused) {
+
+                    music.play();
+
+                    musicStarted = true;
+
+                    musicButton.innerHTML =
+                        "⏸️ PAUSE MUSIC";
+
+                }
+
+                else {
+
+                    music.pause();
+
+                    musicButton.innerHTML =
+                        "🎵 PLAY MUSIC";
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           PASSWORD
+        ========================= */
+
+        function checkPassword() {
+
+            let password =
+                document.getElementById(
+                    "passwordInput"
+                ).value;
+
+
+            if (password === "1027") {
+
+                document.getElementById(
+                    "passwordScreen"
+                ).style.display =
+                    "none";
+
+                document.getElementById(
+                    "screen2"
+                ).style.display =
+                    "block";
+
+            }
+
+            else {
+
+                document.getElementById(
+                    "passwordScreen"
+                ).style.display =
+                    "none";
+
+                document.getElementById(
+                    "screen1"
+                ).style.display =
+                    "block";
+
+            }
+
+        }
+
+
+        /* =========================
+           TRY AGAIN
+        ========================= */
+
+        function tryAgain() {
+
+            document.getElementById(
+                "screen1"
+            ).style.display =
+                "none";
+
+            document.getElementById(
+                "passwordScreen"
+            ).style.display =
+                "block";
+
+            document.getElementById(
+                "passwordInput"
+            ).value =
+                "";
+
+        }
+
+
+        /* =========================
+           CREATE HEARTS
+        ========================= */
+
+        function createHearts() {
+
+            const heartTypes = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💓"
+            ];
+
+
+            for (
+                let i = 0;
+                i < 25;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className =
+                    "heart";
+
+                heart.innerHTML =
+                    heartTypes[
+                        Math.floor(
+                            Math.random()
+                            * heartTypes.length
+                        )
+                    ];
+
+                heart.style.left =
+                    "50%";
+
+                heart.style.top =
+                    "55%";
+
+
+                const x =
+                    (Math.random() - 0.5)
+                    * 600;
+
+                const y =
+                    -Math.random()
+                    * 550 - 100;
+
+
+                heart.style.setProperty(
+                    "--x",
+                    `${x}px`
+                );
+
+                heart.style.setProperty(
+                    "--y",
+                    `${y}px`
+                );
+
+
+                heart.style.fontSize =
+                    `${18 +
+                    Math.random() * 25}px`;
+
+
+                heart.style.animationDelay =
+                    `${Math.random() * 0.5}s`;
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        heart.remove();
+
+                    },
+                    3500
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           SPARKLES
+        ========================= */
+
+        function createSparkles() {
+
+            for (
+                let i = 0;
+                i < 40;
+                i++
+            ) {
+
+                const sparkle =
+                    document.createElement("div");
+
+                sparkle.className =
+                    "sparkle";
+
+
+                sparkle.style.left =
+                    "50%";
+
+                sparkle.style.top =
+                    "55%";
+
+
+                const x =
+                    (Math.random() - 0.5)
+                    * 500;
+
+                const y =
+                    (Math.random() - 0.5)
+                    * 500;
+
+
+                sparkle.style.transform =
+                    `translate(${x}px, ${y}px)`;
+
+
+                sparkle.style.animationDelay =
+                    `${Math.random() * 0.5}s`;
+
+
+                document.body.appendChild(
+                    sparkle
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        sparkle.remove();
+
+                    },
+                    2000
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           OPEN GIFT
+        ========================= */
+
+        function openGift() {
+
+            const lid =
+                document.querySelector(
+                    ".gift-lid"
+                );
+
+            const hearts =
+                document.querySelector(
+                    ".hearts"
+                );
+
+
+            lid.style.transform =
+                "translateY(-80px) rotate(-10deg)";
+
+
+            hearts.classList.add(
+                "show"
+            );
+
+
+            createHearts();
+
+            createSparkles();
+
+
+            setTimeout(
+                function () {
+
+                    document.getElementById(
+                        "screen2"
+                    ).style.display =
+                        "none";
+
+                    document.getElementById(
+                        "message"
+                    ).style.display =
+                        "block";
+
+                },
+                1200
+            );
+
+        }
+
+
+        /* =========================
+           PHOTO ALBUM
+        ========================= */
+
+        let currentPhoto = 1;
+
+
+        function nextPhoto() {
+
+            currentPhoto++;
+
+
+            /* =========================
+               PHOTO 3 FINISHED
+            ========================= */
+
+            if (currentPhoto > 3) {
+
+                document.getElementById(
+                    "finalMessage"
+                ).style.display =
+                    "block";
+
+
+                createHearts();
+
+                createSparkles();
+
+
+                document.getElementById(
+                    "finalMessage"
+                ).scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+                return;
+
+            }
+
+
+            const photo =
+                document.getElementById(
+                    "albumPhoto"
+                );
+
+
+            photo.style.opacity =
+                "0";
+
+            photo.style.transform =
+                "scale(0.8) rotate(0deg)";
+
+
+            setTimeout(
+                function () {
+
+                    photo.src =
+                        currentPhoto +
+                        ".png";
+
+
+                    photo.style.opacity =
+                        "1";
+
+
+                    if (
+                        currentPhoto === 2
+                    ) {
+
+                        photo.style.transform =
+                            "scale(1) rotate(3deg)";
+
+                    }
+
+                    else {
+
+                        photo.style.transform =
+                            "scale(1) rotate(-2deg)";
+
+                    }
+
+                },
+                500
+            );
+
+
+            /* Hearts */
+
+            createPhotoHearts();
+
+        }
+
+
+        /* =========================
+           PHOTO HEARTS
+        ========================= */
+
+        function createPhotoHearts() {
+
+            const heartTypes = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖"
+            ];
+
+
+            for (
+                let i = 0;
+                i < 12;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className =
+                    "heart";
+
+
+                heart.innerHTML =
+                    heartTypes[
+                        Math.floor(
+                            Math.random()
+                            * heartTypes.length
+                        )
+                    ];
+
+
+                heart.style.left =
+                    "50%";
+
+                heart.style.top =
+                    "65%";
+
+
+                const x =
+                    (Math.random() - 0.5)
+                    * 350;
+
+                const y =
+                    -Math.random()
+                    * 300 - 50;
+
+
+                heart.style.setProperty(
+                    "--x",
+                    `${x}px`
+                );
+
+                heart.style.setProperty(
+                    "--y",
+                    `${y}px`
+                );
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        heart.remove();
+
+                    },
+                    3500
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           LAST SURPRISE
+        ========================= */
+
+        function showLastSurprise() {
+
+            document.getElementById(
+                "finalMessage"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "lastSurprise"
+            ).style.display =
+                "block";
+
+
+            document.getElementById(
+                "lastSurprise"
+            ).scrollIntoView({
+                behavior: "smooth"
+            });
+
+
+            createFinalHearts();
+
+            createSparkles();
+
+
+            setTimeout(
+                function () {
+
+                    createFinalHearts();
+
+                },
+                1500
+            );
+
+
+            setTimeout(
+                function () {
+
+                    createFinalHearts();
+
+                },
+                3000
+            );
+
+        }
+
+
+        /* =========================
+           FINAL HEART EXPLOSION
+        ========================= */
+
+        function createFinalHearts() {
+
+            const hearts = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💓",
+                "🥹"
+            ];
+
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                heart.className =
+                    "final-heart";
+
+
+                heart.innerHTML =
+                    hearts[
+                        Math.floor(
+                            Math.random()
+                            * hearts.length
+                        )
+                    ];
+
+
+                heart.style.left =
+                    "50%";
+
+                heart.style.top =
+                    "60%";
+
+
+                const x =
+                    (Math.random() - 0.5)
+                    * 800;
+
+
+                const y =
+                    -Math.random()
+                    * 650 - 100;
+
+
+                heart.style.setProperty(
+                    "--fx",
+                    `${x}px`
+                );
+
+
+                heart.style.setProperty(
+                    "--fy",
+                    `${y}px`
+                );
+
+
+                heart.style.fontSize =
+                    `${20 +
+                    Math.random() * 30}px`;
+
+
+                heart.style.animationDelay =
+                    `${Math.random() * 1.2}s`;
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        heart.remove();
+
+                    },
+                    5000
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
